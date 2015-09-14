@@ -72,8 +72,8 @@ $(document).ready(function() {
         $("ul#places").text("");
         newPlace.visits.forEach(function(visit) {
           $("ul#visits").append("<li>" + visit.date + ", " + visit.activity + "<br>" + "</li>");
-
-          $(".visit-picture").css("background-image", "url('"+visit.picture+"')");
+          $("ul#visits").append("<div class='visit-picture' id='visit-picture-" + visit.activity + "'></div>");
+          $("#visit-picture-" + visit.activity).css("background-image", "url('"+visit.picture+"')");
 
         });
       });

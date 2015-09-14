@@ -20,5 +20,6 @@
   background-repeat: none;
   background-size: cover;
   backgrounod-repeat: none;
+  border: solid black 1px;
   /*backround-image: url('');*/
 }
