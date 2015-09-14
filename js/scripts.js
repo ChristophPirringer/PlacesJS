@@ -32,8 +32,12 @@ $(document).ready(function() {
                                    '<input type="text" class="form-control new-date">' +
                                  '</div>' +
                                  '<div class="form-group">' +
-                                   '<label for="new-activity">Activity</label>' +
+                                   '<label for=n"ew-activity">Activity</label>' +
                                    '<input type="text" class="form-control new-activity">' +
+                                 '</div>' +
+                                 '<div class="form-group">' +
+                                   '<label for="new-picture">Picture</label>' +
+                                   '<input type="text" class="form-control new-picture">' +
                                  '</div>' +
                                '</div>');
   });
@@ -49,8 +53,10 @@ $(document).ready(function() {
       $(".new-visit").each(function() {
         var inputtedDate = $(this).find("input.new-date").val();
         var inputtedActivity = $(this).find("input.new-activity").val();
+        var inputtedPicture = $(this).find("input.new-picture").val();
+// debugger;
 
-        var newVisit = { date: inputtedDate, activity: inputtedActivity };
+        var newVisit = { date: inputtedDate, activity: inputtedActivity, picture: inputtedPicture };
         newPlace.visits.push(newVisit);
       });
 
@@ -63,10 +69,12 @@ $(document).ready(function() {
         $("#show-place h2").text(newPlace.name);
         $(".new-name").text(newPlace.name);
         $(".new-location").text(newPlace.location);
-
         $("ul#places").text("");
         newPlace.visits.forEach(function(visit) {
-          $("ul#visits").append("<li>" + visit.date + ", " + visit.activity + "</li>");
+          $("ul#visits").append("<li>" + visit.date + ", " + visit.activity + "<br>" + "</li>");
+
+          $(".visit-picture").css("background-image", "url('"+visit.picture+"')");
+
         });
       });
 
@@ -74,5 +82,6 @@ $(document).ready(function() {
       $("input#new-location").val("");
       $("input.new-date").val("");
       $("input.new-activity").val("");
+      $("input.new-picture").val("");
     });
   });

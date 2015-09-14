@@ -13,3 +13,12 @@
 .place:hover {
   text-decoration: underline;
 }
+
+.visit-picture{
+  width:200px;
+  height:200px;
+  background-repeat: none;
+  background-size: cover;
+  backgrounod-repeat: none;
+  /*backround-image: url('');*/
+}
